@@ -9,7 +9,7 @@ import heroImg from "@/assets/hero-mockup.jpg";
 import offerImg from "@/assets/offer-mockup.jpg";
 
 // Replace with the real checkout URL
-const CHECKOUT_URL = "#oferta";
+const CHECKOUT_URL = "https://pay.cakto.com.br/33nb8t4_1265713";
 
 export const Route = createFileRoute("/")({
   head: () => ({
