@@ -65,11 +65,28 @@ const faq = [
   ["Qual é o valor dos dois simulados?", "Você garante os dois simulados cronometrados pelo valor promocional de R$ 19,90, em pagamento único."],
 ];
 
+const DECLINE_URL = "https://saenfermagem.lovable.app";
+
 function Cta({ href = "#oferta", children }: { href?: string; children: React.ReactNode }) {
   return (
     <a href={href} className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-4 text-center text-sm font-bold tracking-wide text-accent-foreground shadow-glow transition hover:-translate-y-0.5 hover:brightness-110 md:text-base">
       {children}
     </a>
+  );
+}
+
+function DeclineButton() {
+  return (
+    <div className="mt-4 text-center">
+      <a
+        href={DECLINE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-sm text-muted-foreground underline underline-offset-4 transition hover:text-primary"
+      >
+        Não aceito essa oferta
+      </a>
+    </div>
   );
 }
 
@@ -160,6 +177,7 @@ function Index() {
                 <div className="font-display text-5xl font-bold text-primary">R$ 19,90</div>
                 <p className="mt-1 text-sm text-muted-foreground">Pagamento único · Valor total pelos dois simulados.</p>
                 <div className="mt-6"><Cta href={CHECKOUT_URL}>QUERO OS 2 SIMULADOS POR R$ 19,90</Cta></div>
+                <DeclineButton />
               </div>
             </div>
           </div>
@@ -194,6 +212,7 @@ function Index() {
             Não fique apenas na teoria. Pratique, desafie seus conhecimentos e treine seu tempo com dois simulados de enfermagem por apenas R$ 19,90.
           </p>
           <div className="mt-8"><Cta href={CHECKOUT_URL}>GARANTIR OS 2 SIMULADOS POR R$ 19,90</Cta></div>
+          <DeclineButton />
         </div>
       </section>
 
